@@ -89,6 +89,7 @@ abstract class Job extends Item {
                 maxConcurrentPerNode(throttleContext.maxConcurrentPerNode)
                 maxConcurrentTotal(throttleContext.maxConcurrentTotal)
                 throttleEnabled(!throttleContext.throttleDisabled)
+                limitOneJobWithMatchingParams(throttleContext.limitOneJobWithMatchingParams)
                 throttleOption(throttleContext.categories.empty ? 'project' : 'category')
                 categories {
                     throttleContext.categories.each { c ->

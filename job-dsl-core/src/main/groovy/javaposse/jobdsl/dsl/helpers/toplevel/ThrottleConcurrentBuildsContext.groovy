@@ -17,6 +17,7 @@ class ThrottleConcurrentBuildsContext extends AbstractContext {
     int maxConcurrentTotal
     boolean throttleMatrixBuilds = true
     boolean throttleMatrixConfigurations = true
+    boolean limitOneJobWithMatchingParams = false
 
     ThrottleConcurrentBuildsContext(JobManagement jobManagement, Item item) {
         super(jobManagement)
@@ -28,6 +29,13 @@ class ThrottleConcurrentBuildsContext extends AbstractContext {
      */
     void throttleDisabled(boolean throttleDisabled = true) {
         this.throttleDisabled = throttleDisabled
+    }
+
+    /**
+     * Throttle jobs with same parameters to one. Defaults to {@code false}.
+     */
+    void throttleOneJobWithMatchingParams(boolean limitOneJobWithMatchingParams = true) {
+        this.limitOneJobWithMatchingParams = limitOneJobWithMatchingParams
     }
 
     /**

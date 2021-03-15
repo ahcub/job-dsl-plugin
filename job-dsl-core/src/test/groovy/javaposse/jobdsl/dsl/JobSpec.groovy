@@ -350,6 +350,7 @@ class JobSpec extends Specification {
         when:
         job.throttleConcurrentBuilds {
             throttleDisabled()
+            throttleOneJobWithMatchingParams()
         }
 
         then:

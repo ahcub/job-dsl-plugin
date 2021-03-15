@@ -12,3 +12,10 @@ job('example-2') {
         categories(['cat-1'])
     }
 }
+
+// throttle to one job with same parameters
+job('example-3') {
+    throttleConcurrentBuilds {
+        throttleOneJobWithMatchingParams()
+    }
+}
